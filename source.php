@@ -3,7 +3,7 @@ add_filter( 'um_custom_authenticate_error_codes', 'um_custom_authenticate_error_
 
 function um_custom_authenticate_error_codes_loginizer( $array ) {
 
-    return array( 'ip_blocked', 'ip_blacklisted' );
+    return array_merge( $array, array( 'ip_blocked', 'ip_blacklisted' ));
 }
 
 add_filter( 'authenticate', 'loginizer_um_integration', 10002, 1 );
